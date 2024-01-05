@@ -41,23 +41,23 @@ class Echo(discord.Client):
             now = datetime.now()
             day_of_week = now.weekday()
 
-            if day_of_week == 2:  # Wednesday
-                # First announcement at 10 AM
-                announce_time = now.replace(hour=10, minute=0, second=0, microsecond=0)
+            if day_of_week == 1:  # Tuesday
+                # First announcement at 12 PM
+                announce_time = now.replace(hour=12, minute=0, second=0, microsecond=0)
                 time_difference = announce_time - now
 
-                await asyncio.sleep(time_difference.total_seconds())
+                await asyncio.sleep(time_difference.total_seconds(), 0)
 
                 try:
-                    await channel.send("@everyone Hey everyone! Our weekly GBM will be today at 5:00 PM. Don't miss it!")
+                    await channel.send("@everyone Hey everyone! Our weekly GBM will be today at 6:00 PM. Don't miss it!")
                 except:
                     pass
 
-                # Second announcement at 4.50 PM
-                announce_time = now.replace(hour=16, minute=50, second=0, microsecond=0)
+                # Second announcement at 5.50 PM
+                announce_time = now.replace(hour=17, minute=50, second=0, microsecond=0)
                 time_difference = announce_time - now
 
-                await asyncio.sleep(time_difference.total_seconds())
+                await asyncio.sleep(time_difference.total_seconds(), 0)
 
                 try:
                     await channel.send("@everyone Hey everyone! Our weekly GBM will be in 10 minutes. Don't miss it!")
